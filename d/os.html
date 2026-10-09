@@ -83,7 +83,7 @@ function said(e) {   // one line for a log row, from its own words
 function render(v) {
   const live = v.strategies.length ? (v.nextRun ? "next run " + until(Date.parse(v.nextRun)) : "no run scheduled") : "sells only";
   const sale = v.sale;
-  document.getElementById("note").innerHTML = v.mainnet ? "Robinhood Chain · obol.sh" : "Robinhood Chain <strong>testnet</strong> · test tokens, no real value · testnet.obol.sh";
+  document.getElementById("note").innerHTML = v.mainnet ? "Robinhood Chain · obol.sh" : "Robinhood Chain <strong>testnet</strong> · test tokens, no real value · testnet.daemonnft.org";
   document.getElementById("state").innerHTML = esc(v.mainnet
     ? (sale.sold ? "revealed · its own wallet" : sale.open ? "unsold · " + sale.price + " ETH now (band " + sale.band + " of 10)" : "unsold · on sale " + new Date(sale.opensAt * 1000).toUTCString().replace(":00 GMT", " UTC"))
     : "v " + (v.version || "—") + " · " + live);
